@@ -1,0 +1,57 @@
+@import "variable";
+
+.chat-main{
+  width: calc(100vw - 300px);
+  float: left;
+  .main-header{
+    height: 100px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px #eee;
+    .current-group{
+      font-size: 20px;
+      color: #333;
+      margin-top: 35px;
+      &__name{
+        font-size: 100%;
+        font-weight: normal;
+      }
+      ul{
+          display: flex;
+          margin-top: 15px;
+          font-size: 12px;
+          color: #999999;
+        li{
+          margin-left: 0.3rem;
+        }
+      }
+    }
+    a{
+      text-decoration: none;
+      .main-header__edit-btn{
+          box-sizing: border-box;
+          height: 40px;
+          line-height: 40px;
+          padding: 0 20px;
+          margin-top: 30px;
+          border: solid 1px $buttonColer;
+          color: $buttonColer;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+  .main-contents{
+
+  }
+  .botom-form{
+
+  }
+}
