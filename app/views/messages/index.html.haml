@@ -1,2 +1,21 @@
-%h1 Messages#index
-%p Find me in app/views/messages/index.html.haml
+.flash-box
+.wrapper
+  .chat-side
+    .side-header
+      %p.side-header__user-name hoge
+      %ul.user-menu
+        %li.user-menu__edit-user
+          %a{:href => "/groups/"}
+            %i.fa.fa-edit
+        %li.user-menu__new-group
+          %a{:href => "/users//"}
+            %i.fa.fa-cog
+    .groups
+      %a{:href => "/groups//"}
+        .group
+          %p.group__group-name hoge
+          %p.group__latest-message hogehoge
+      %a{:href => "/groups//"}
+        .group
+          %p.group__group-name hoge
+          %p.group__latest-message hogehoge
