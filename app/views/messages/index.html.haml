@@ -1,2 +1,26 @@
-%h1 Messages#index
-%p Find me in app/views/messages/index.html.haml
+.flash-box
+.wrapper
+  .chat-side
+    .side-header
+      %p.side-header__user-name
+        hoge
+      %ul.user-menu
+        %li.user-menu__edit-user
+          = link_to root_path do 
+            %i.fa.fa-edit
+        %li.user-menu__new-group
+          = link_to root_path do 
+            %i.fa.fa-cog
+    .groups
+      = link_to root_path do 
+        .group
+          %p.group__group-name
+            hoge
+          %p.group__latest-message 
+            hogehoge
+      = link_to root_path do 
+        .group
+          %p.group__group-name
+            hoge
+          %p.group__latest-message
+            hogehoge
