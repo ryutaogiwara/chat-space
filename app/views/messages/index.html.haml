@@ -2,20 +2,25 @@
 .wrapper
   .chat-side
     .side-header
-      %p.side-header__user-name hoge
+      %p.side-header__user-name
+        hoge
       %ul.user-menu
         %li.user-menu__edit-user
-          %a{:href => "/groups/"}
+          = link_to "/" do 
             %i.fa.fa-edit
         %li.user-menu__new-group
-          %a{:href => "/users//"}
+          = link_to "/" do 
             %i.fa.fa-cog
     .groups
-      %a{:href => "/groups//"}
+      = link_to "/" do 
         .group
-          %p.group__group-name hoge
-          %p.group__latest-message hogehoge
-      %a{:href => "/groups//"}
+          %p.group__group-name
+            hoge
+          %p.group__latest-message 
+            hogehoge
+      = link_to "/" do 
         .group
-          %p.group__group-name hoge
-          %p.group__latest-message hogehoge
+          %p.group__group-name
+            hoge
+          %p.group__latest-message
+            hogehoge
