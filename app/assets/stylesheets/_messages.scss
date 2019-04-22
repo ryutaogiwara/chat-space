@@ -1,0 +1,28 @@
+.messages{
+  height: calc(100vh - 190px);
+  padding: 46px 40px;
+  background-color: $messagesBackgroundColor;
+  overflow: scroll;
+  .message{
+    padding-bottom: 40px;
+    .upper-info{
+      display: flex;
+      margin-bottom: 10px;
+      &__user{
+        color: $messagesColor;
+        font-size: $messageFontSizeLarge;
+        font-weight: bold;
+      }
+      &__date{
+        color: $messagesDateColor;
+        font-size: $messageFontSizeSmall;
+        margin-left: 10px;
+      }
+    }
+    .message__text{
+      color: $messagesColor;
+      font-size: $messageFontSizeNormal;
+      margin-bottom: 10px;
+    }
+  }
+}
