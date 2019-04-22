@@ -10,18 +10,18 @@
       margin-bottom: 10px;
       &__user{
         color: $messagesColor;
-        font-size: $messageFontSizeLarge;
+        font-size: $messagesFontSizeLarge;
         font-weight: bold;
       }
       &__date{
         color: $messagesDateColor;
-        font-size: $messageFontSizeSmall;
+        font-size: $messagesFontSizeSmall;
         margin-left: 10px;
       }
     }
     &__text{
       color: $messagesColor;
-      font-size: $messageFontSizeNormal;
+      font-size: $messagesFontSizeNormal;
       margin-bottom: 10px;
     }
   }
