@@ -28,29 +28,15 @@
     }
     a{
       text-decoration: none;
-      .main-header__edit-btn{
-          box-sizing: border-box;
-          height: 40px;
-          line-height: 40px;
-          padding: 0 20px;
-          margin-top: 30px;
-          border: solid 1px $buttonColor;
-          color: $buttonColor;
-      }
     }
-  }
-
-
-
-
-
-
-
-
-  .main-contents{
-
-  }
-  .botom-form{
-
+    &__edit-btn{
+        box-sizing: border-box;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 20px;
+        margin-top: 30px;
+        border: solid 1px $buttonColor;
+        color: $buttonColor;
+    }
   }
 }
