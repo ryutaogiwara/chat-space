@@ -46,3 +46,37 @@
           %p.upper-info__user hoge
           %p.upper-info__date 2019/04/17(Wed) 15:59:13
         %p.message__text hogehoge
+
+      .message{"data-message_id" => ""}
+        .upper-info
+          %p.upper-info__user hoge
+          %p.upper-info__date 2019/04/17(Wed) 15:59:13
+        %p.message__text hogehoge
+
+      .message{"data-message_id" => ""}
+        .upper-info
+          %p.upper-info__user hoge
+          %p.upper-info__date 2019/04/17(Wed) 15:59:13
+        %p.message__text hogehoge
+
+      .message{"data-message_id" => ""}
+        .upper-info
+          %p.upper-info__user hoge
+          %p.upper-info__date 2019/04/17(Wed) 15:59:13
+        %p.message__text hogehoge
+
+      .message{"data-message_id" => ""}
+        .upper-info
+          %p.upper-info__user hoge
+          %p.upper-info__date 2019/04/17(Wed) 15:59:13
+        %p.message__text hogehoge
+
+
+    .bottom-form
+      %form.new-message{"" => "", :action => "", :enctype => "", :id => "", :method => ""}
+        .input-box
+          %input#message_content.input-box__text{:name => "", :placeholder => "type a message", :type => ""}/
+          %label.image-label{:for => ""}
+            %i.fa.fa-image
+            %input#message_image.image-label__input{:name => "", :type => ""}/
+        %input.new-message__submit-btn{"" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
