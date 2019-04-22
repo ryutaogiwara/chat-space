@@ -1,6 +1,6 @@
 .flash-box
 .wrapper
-  .chat-side
+  .sidebar
     .side-header
       %p.side-header__user-name
         hoge
@@ -24,3 +24,23 @@
             hoge
           %p.group__latest-message
             hogehoge
+  .chat-main
+    .main-header
+      .current-group{"data-group_id" => "559"}
+        %h2.current-group__name
+          hoge
+        %ul.member-list
+          Member：
+          %li1.member-list__member
+            kkk
+          %li.member-list__member
+            hogehoge
+          %li.member-list__member
+            hoge
+      = link_to root_path do
+        .main-header__edit-btn
+          Edit
+    
+    -# TODO
+    -# .main-contents
+    -# .bottom-form

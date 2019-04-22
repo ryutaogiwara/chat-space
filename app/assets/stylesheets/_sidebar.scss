@@ -1,6 +1,4 @@
-@import "variable";
-
-.chat-side{
+.sidebar{
   width: 300px;
   float: left;
   .side-header{
@@ -14,7 +12,7 @@
     width: 100%;
     font-weight: bold;
     &__user-name{
-      font-size: $fontSizeLarge;
+      font-size: $sidebarFontSizeLarge;
       font-weight: bold;
       color: $color;
     }
@@ -46,11 +44,11 @@
       .group{
         margin-bottom: 40px;
         &__group-name{
-          font-size: $fontSizeNormal;
+          font-size: $sidebarFontSizeNormal;
           margin-bottom: 5px;
         }
         &__latest-message {
-          font-size: $fontSizeSmall;
+          font-size: $sidebarFontSizeSmall;
         }
         }
     }
