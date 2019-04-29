@@ -37,19 +37,19 @@
     background-color: $sidebarLightgray;
     padding: 20px 20px 0;
     overflow: scroll;
+    .group{
+      margin-bottom: 40px;
+      &__name{
+        font-size: $sidebarFontSizeNormal;
+        margin-bottom: 5px;
+      }
+      &__message {
+        font-size: $sidebarFontSizeSmall;
+      }
     a{
       text-decoration: none;
       color: $color;
-      .group{
-        margin-bottom: 40px;
-        &__group-name{
-          font-size: $sidebarFontSizeNormal;
-          margin-bottom: 5px;
-        }
-        &__latest-message {
-          font-size: $sidebarFontSizeSmall;
-        }
-        }
+    }
     }
   }
 }
