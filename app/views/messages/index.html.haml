@@ -18,49 +18,15 @@
         .main-header__edit-btn
           Edit
     .messages
-      .message{data: { message_id: ""}}
-        .upper-info
-          %p.upper-info__user hoge
-          %p.upper-info__date 2019/04/17(Wed) 15:59:13
-        %p.message__text hogehoge
-
-      .message{data: { message_id: ""}}
-        .upper-info
-          %p.upper-info__user hoge
-          %p.upper-info__date 2019/04/17(Wed) 15:59:13
-        %p.message__text hogehoge
-
-      .message{data: { message_id: ""}}
-        .upper-info
-          %p.upper-info__user hoge
-          %p.upper-info__date 2019/04/17(Wed) 15:59:13
-        %p.message__text hogehoge
-
-      .message{data: { message_id: ""}}
-        .upper-info
-          %p.upper-info__user hoge
-          %p.upper-info__date 2019/04/17(Wed) 15:59:13
-        %p.message__text hogehoge
-
-      .message{data: { message_id: ""}}
-        .upper-info
-          %p.upper-info__user hoge
-          %p.upper-info__date 2019/04/17(Wed) 15:59:13
-        %p.message__text hogehoge
-
-      .message{data: { message_id: ""}}
-        .upper-info
-          %p.upper-info__user hoge
-          %p.upper-info__date 2019/04/17(Wed) 15:59:13
-        %p.message__text hogehoge
+      = render @messages
 
 
-    .bottom-form
-      %form.new-message{id: "",enctype: "", action: "", enctype: "", accept: {charset: ""}, method: ""}
-        .input-box
-          %input#message_content.input-box__text{name: "", placeholder: "type a message", type: "text"}
-          %label.image-label{for: ""}
-            %i.fa.fa-image
-            %input#message_image.image-label__input{name: "", type: ""}
-        %input.new-message__submit-btn{name: "commit", type: "submit", value: "Send"}
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
         
