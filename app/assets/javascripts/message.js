@@ -38,8 +38,8 @@ $(function () {
         $('.messages').append(html);
         $(".form__submit").prop("disabled", false);
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'fast');
-        $('.form__message').val('');
-        $('.hidden').val('');
+        $('.form__message').reset();
+        $('.hidden').reset();
       })
       .fail(function () {
         alert('error');
