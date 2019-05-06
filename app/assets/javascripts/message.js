@@ -22,6 +22,10 @@ $(document).on('turbolinks:load', function () {
       return html;
     }
 
+    function scrollBottom() {
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'fast');
+    };
+
     $('#new_message').on('submit', function (e) {
       e.preventDefault();
       var formData = new FormData(this);
@@ -39,7 +43,7 @@ $(document).on('turbolinks:load', function () {
           var html = buildHTML(data);
           $('.messages').append(html);
           $('.form__submit').prop("disabled", false);
-          $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'fast');
+          // $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'fast');
           $(".new_message")[0].reset();
           $('.hidden')[0].reset();
         })
@@ -48,6 +52,36 @@ $(document).on('turbolinks:load', function () {
         })
       return false;
     })
-
+    var reloadMessages = function () {
+      var last_message_id = $(".message").last().data('message-id')
+      //ブラウザ上の最後のidを取得、classに注意、生成するhtmlに最新のidが無いと機能しない
+      var groupId = location.pathname.split('/')[2]//group_idの取得
+      // console.log(groupId)
+      $.ajax({
+        url: `/groups/${groupId}/api/messages`,// 変数使用時''でなく``を使う
+        type: 'GET',
+        dataType: 'json',
+        data: { id: last_message_id }
+      })
+        .done(function (messages) {
+          var insertHTML = ''; //追加するHTMLの入れ物
+          messages.forEach(function (message) { //配列の中身を一つずつ取り出す,map()でも良い？
+            if (message.id > last_message_id) { //ブラウザ上のidとDBのidを比較
+              insertHTML = buildHTML(message);//関数buildHTMLに配列の中身を一つずつ代入
+              $('.messages').append(insertHTML);//message送信時と同じ
+              scrollBottom();
+            };
+          });
+        })
+        .fail(function () {
+          // alert('error');
+        });
+    };
+    //定期的に実行するメソッド
+    if (document.location.href.match("/messages") && !isNaN(location.pathname.split('/')[2])) {
+      //pathに/messagesを含まないと作動しない、isNaN＝数値ならfalseを返す
+      // console.log(!isNaN(location.pathname.split('/')[2]))
+      setInterval(reloadMessages, 5000);
+    };
   });
 });
