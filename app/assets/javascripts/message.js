@@ -43,7 +43,7 @@ $(document).on('turbolinks:load', function () {
           var html = buildHTML(data);
           $('.messages').append(html);
           $('.form__submit').prop("disabled", false);
-          // $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'fast');
+          scrollBottom()
           $(".new_message")[0].reset();
           $('.hidden')[0].reset();
         })
@@ -56,7 +56,6 @@ $(document).on('turbolinks:load', function () {
       var last_message_id = $(".message").last().data('message-id')
       //ブラウザ上の最後のidを取得、classに注意、生成するhtmlに最新のidが無いと機能しない
       var groupId = location.pathname.split('/')[2]//group_idの取得
-      // console.log(groupId)
       $.ajax({
         url: `/groups/${groupId}/api/messages`,// 変数使用時''でなく``を使う
         type: 'GET',
