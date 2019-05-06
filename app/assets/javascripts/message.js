@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function () {
 
   $(function () {
-    function buildHTML(message) {
+    function buildMessageHTML(message) {
       var imagehtml = message.image == null ? "" : `<img src="${message.image}" class="lower-message__image">`
       var html = `<div class="message" data-message-id="${message.id}">
                       <div class="upper-message" data-id="${message.id}">
@@ -39,8 +39,8 @@ $(document).on('turbolinks:load', function () {
         processData: false,
         contentType: false
       })
-        .done(function (data) {
-          var html = buildHTML(data);
+        .done(function (message) {
+          var html = buildMessageHTML(message);
           $('.messages').append(html);
           $('.form__submit').prop("disabled", false);
           scrollBottom()
@@ -66,7 +66,7 @@ $(document).on('turbolinks:load', function () {
           var insertHTML = ''; //追加するHTMLの入れ物
           messages.forEach(function (message) { //配列の中身を一つずつ取り出す,map()でも良い？
             if (message.id > last_message_id) { //ブラウザ上のidとDBのidを比較
-              insertHTML = buildHTML(message);//関数buildHTMLに配列の中身を一つずつ代入
+              insertHTML = buildMessageHTML(message);//関数buildHTMLに配列の中身を一つずつ代入
               $('.messages').append(insertHTML);//message送信時と同じ
               scrollBottom();
             };
