@@ -39,6 +39,7 @@ gem 'erb2haml'
 gem 'font-awesome-rails' 
 gem 'devise'
 gem 'carrierwave'
+gem 'fog-aws'
 gem 'mini_magick'
 
 
@@ -59,7 +60,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'fog-aws'
 end
 
 group :production do
