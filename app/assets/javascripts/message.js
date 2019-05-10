@@ -45,7 +45,6 @@ $(document).on('turbolinks:load', function () {
           $('.form__submit').prop("disabled", false);
           scrollBottom()
           $(".new_message")[0].reset();
-          // $('.hidden')[0].reset();
         })
         .fail(function () {
           alert('error');
